@@ -6,7 +6,7 @@ class Car {
   }
 
   get getCarNames() {
-    return this.name;
+    return this.carNames;
   }
 
   get getPlayCount() {
@@ -14,6 +14,8 @@ class Car {
   }
 
   get getRasingInfo() {
+    this.rasingInfo.carNames = carNames;
+    this.rasingInfo.playCount = playCount;
     return this.rasingInfo;
   }
 
