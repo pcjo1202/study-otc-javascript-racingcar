@@ -1,15 +1,20 @@
 import Car from './car.js';
+import RasingController from './controller.js';
 
 const carInfo = new Car();
 
 class App {
   constructor() {
-    this.rasingInfo = carInfo.getRasingInfo;
+    // this.rasingInfo = carInfo.getRasingInfo;
   }
   async play() {
-    //1. 경주에 참여할 차, 시도횟수 입력을 받는다
-    //2. 경주를 진행한다.
-    //3. 출력한다.
+    const rasingController = new RasingController(carInfo);
+
+    //입력을 받아온다.
+    await rasingController.prepareRasing();
+
+    //경주를 진행한다.
+    await rasingController.startRacing();
   }
 }
 
