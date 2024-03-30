@@ -10,7 +10,6 @@ class Input {
       );
 
       const cars = input.split(',');
-
       //예외 처리
 
       return cars;
@@ -20,9 +19,7 @@ class Input {
   // 경주 시도할 횟수를 입력 받음
   async inputRasingCount() {
     try {
-      const input = await MissionUtils.Console.readLineAsync('시도할 횟수 : ');
-
-      const count = input;
+      const count = await MissionUtils.Console.readLineAsync('시도할 횟수 : ');
 
       //예외 처리
       return count;
