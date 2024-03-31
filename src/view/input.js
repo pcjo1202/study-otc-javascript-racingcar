@@ -21,7 +21,7 @@ class Input {
   }
 
   // 경주 시도할 횟수를 입력 받음
-  async inputRasingCount() {
+  async inputRacingCount() {
     try {
       const count = await MissionUtils.Console.readLineAsync('시도할 횟수 : ');
 

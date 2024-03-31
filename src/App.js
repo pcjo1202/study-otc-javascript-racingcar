@@ -11,7 +11,7 @@ class App {
     const rasingController = new RasingController(carInfo);
 
     //입력을 받아온다.
-    await rasingController.prepareRasing();
+    await rasingController.prepareRacing();
 
     //경주를 진행한다.
     await rasingController.startRacing();

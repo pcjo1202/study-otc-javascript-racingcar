@@ -2,12 +2,12 @@ import Input from '../view/input.js';
 import { MissionUtils } from '@woowacourse/mission-utils';
 import Output from '../view/output.js';
 
-class RasingController {
+class RacingController {
   constructor(carInfo) {
     this.carInfo = carInfo;
 
     // this.mockupData = {
-    //   rasingCarList: [
+    //   racingCarList: [
     //     { carName: 'pobi', forward: 0 },
     //     { carName: 'woni', forward: 0 },
     //     { carName: 'jun', forward: 0 },
@@ -16,31 +16,31 @@ class RasingController {
     // };
   }
 
-  prepareRasing = async () => {
-    let { rasingCarList, playCount, initRasingInfo } = this.carInfo;
-    const rasingInput = new Input();
+  prepareRacing = async () => {
+    let { racingCarList, playCount, initRacingInfo } = this.carInfo;
+    const racingInput = new Input();
     //1. 경주에 참여할 차 입력을 받는다
-    rasingCarList = await rasingInput.inputCars();
+    racingCarList = await racingInput.inputCars();
     //2. 경주 시도횟수 입력 받는다.
-    playCount = await rasingInput.inputRasingCount();
+    playCount = await racingInput.inputRacingCount();
 
     //3. 경주에 필요한 정보를 셋팅한다.
-    await initRasingInfo(rasingCarList, playCount);
+    await initRacingInfo(racingCarList, playCount);
 
-    //return console.log(this.carInfo.rasingInfo);
+    //return console.log(this.carInfo.racingInfo);
   };
 
   startRacing = async () => {
-    const { rasingCarList, playCount } = this.carInfo.rasingInfo;
+    const { racingCarList, playCount } = this.carInfo.racingInfo;
     const { Console } = MissionUtils;
-    // const { rasingCarList, playCount } = this.mockupData;
+    // const { racingCarList, playCount } = this.mockupData;
 
     let currentPlayCount = 0;
     const { printRoundStatus, printWinner } = new Output();
 
     while (playCount > currentPlayCount) {
       //playCount 만큼 중첩된 결과를 출력
-      rasingCarList.forEach((car, index) => {
+      racingCarList.forEach((car, index) => {
         this.round(car);
         //각각의 결과를 출력
         printRoundStatus(car);
@@ -51,7 +51,7 @@ class RasingController {
     }
 
     //최종 결과
-    printWinner(rasingCarList);
+    printWinner(racingCarList);
   };
 
   round(car) {
@@ -78,4 +78,4 @@ class RasingController {
   }
 }
 
-export default RasingController;
+export default RacingController;

@@ -9,20 +9,20 @@ class Output {
   }
 
   //최종 우승자를 출려하는 함수
-  printWinner(rasingCarList) {
+  printWinner(racingCarList) {
     let winner = '';
     let maxForward = 0;
 
-    Object.keys(rasingCarList).forEach((key) => {
-      maxForward = Math.max(maxForward, rasingCarList[key].forward);
+    Object.keys(racingCarList).forEach((key) => {
+      maxForward = Math.max(maxForward, racingCarList[key].forward);
     });
 
-    const maxForwardCar = Object.keys(rasingCarList)
+    const maxForwardCar = Object.keys(racingCarList)
       .filter((key) => {
-        return rasingCarList[key].forward === maxForward;
+        return racingCarList[key].forward === maxForward;
       })
       .map((key) => {
-        const name = rasingCarList[key].carName;
+        const name = racingCarList[key].carName;
         return name;
       });
 
