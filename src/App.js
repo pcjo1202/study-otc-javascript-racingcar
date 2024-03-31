@@ -1,5 +1,5 @@
-import Car from './car.js';
-import RasingController from './controller.js';
+import Car from './model/car.js';
+import RasingController from './controller/controller.js';
 
 const carInfo = new Car();
 

@@ -1,4 +1,4 @@
-import { ERROR_MESSAGE } from './constants/message.js';
+import { ERROR_MESSAGE } from '../constants/message.js';
 
 class ErrorHandler {
   static validateCount = (count) => {

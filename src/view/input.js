@@ -1,5 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import ErrorHandler from './errorHandler.js';
+import ErrorHandler from '../utils/errorHandler.js';
 
 class Input {
   constructor() {}

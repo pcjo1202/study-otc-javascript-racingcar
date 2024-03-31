@@ -1,6 +1,6 @@
-import Input from './input.js';
+import Input from '../view/input.js';
 import { MissionUtils } from '@woowacourse/mission-utils';
-import Output from './output.js';
+import Output from '../view/output.js';
 
 class RasingController {
   constructor(carInfo) {
