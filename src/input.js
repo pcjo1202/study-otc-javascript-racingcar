@@ -1,4 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
+import ErrorHandler from './errorHandler.js';
 
 class Input {
   constructor() {}
@@ -10,10 +11,13 @@ class Input {
       );
 
       const cars = input.split(',');
-      //예외 처리
+
+      ErrorHandler.validateCarName(cars);
 
       return cars;
-    } catch (error) {}
+    } catch (error) {
+      return Promise.reject(new Error(error));
+    }
   }
 
   // 경주 시도할 횟수를 입력 받음
@@ -22,8 +26,12 @@ class Input {
       const count = await MissionUtils.Console.readLineAsync('시도할 횟수 : ');
 
       //예외 처리
+      ErrorHandler.validateCount(count);
+
       return count;
-    } catch (error) {}
+    } catch (error) {
+      return Promise.reject(new Error(error));
+    }
   }
 }
 
