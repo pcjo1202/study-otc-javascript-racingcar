@@ -16,7 +16,8 @@ class Input {
 
       return cars;
     } catch (error) {
-      return Promise.reject(new Error(error));
+      throw error;
+      // return Promise.reject(new Error(error));
     }
   }
 
@@ -30,7 +31,8 @@ class Input {
 
       return count;
     } catch (error) {
-      return Promise.reject(new Error(error));
+      throw error;
+      // return Promise.reject(new Error(error));
     }
   }
 }
