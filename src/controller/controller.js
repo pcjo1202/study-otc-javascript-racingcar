@@ -36,14 +36,14 @@ class RacingController {
     // const { racingCarList, playCount } = this.mockupData;
 
     let currentPlayCount = 0;
-    const { printRoundStatus, printWinner } = new Output();
+    const output = new Output();
 
     while (playCount > currentPlayCount) {
       //playCount 만큼 중첩된 결과를 출력
       racingCarList.forEach((car, index) => {
         this.round(car);
         //각각의 결과를 출력
-        printRoundStatus(car);
+        output.printRoundStatus(car);
       });
       Console.print('\n');
 
@@ -51,7 +51,7 @@ class RacingController {
     }
 
     //최종 결과
-    printWinner(racingCarList);
+    output.printWinner(racingCarList);
   };
 
   round(car) {
